@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10131b">
+<meta name="description" content="Humar Moreno builds reliable cloud platforms, DevOps workflows, backend systems, and practical AI-powered automations.">
+<title>Humar Moreno — DevOps, Cloud & AI Automation</title>
+<link rel="canonical" href="https://humar.dev/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' shape-rendering='crispEdges'%3E%3Crect width='8' height='8' fill='%2310131b'/%3E%3Crect x='1' y='1' width='2' height='6' fill='%23d8c3a5'/%3E%3Crect x='5' y='1' width='2' height='6' fill='%23d8c3a5'/%3E%3Crect x='3' y='3' width='2' height='2' fill='%237d2635'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://humar.dev/">
+<meta property="og:title" content="Humar Moreno — DevOps, Cloud & AI Automation">
+<meta property="og:description" content="Reliable cloud platforms, DevOps workflows, backend systems, practical AI automations — and Pixel Tower Defense, a pixel-art game for Android.">
+<meta property="og:image" content="https://humar.dev/pixel-tower-defense/feature.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Person","name":"Humar Moreno","url":"https://humar.dev/","jobTitle":"DevOps engineer & backend developer","address":{"@type":"PostalAddress","addressLocality":"Medellín","addressCountry":"CO"},"sameAs":["https://www.linkedin.com/in/humar-moreno-715759101/","https://www.instagram.com/huenmobra/"]},
+ {"@type":"MobileApplication","name":"Pixel Tower Defense","operatingSystem":"Android","applicationCategory":"GameApplication","author":{"@type":"Person","name":"Humar Moreno"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"image":"https://humar.dev/pixel-tower-defense/icon-512.png","url":"https://humar.dev/#games"}
+]}
+</script>
+<style>
+:root{
+  --night:#10131b;--panel:#171d29;--navy:#263d5a;--navy2:#1b2a40;
+  --red:#7d2635;--oxblood:#481d2a;--sand:#d8c3a5;--wood:#a77e5b;
+  --olive:#858b61;--sage:#b6b99a;--dusty:#9aafc5;--white:#e9e4da;
+  --muted:#a5a8ae;--line:rgba(216,195,165,.15);--mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  --sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--white);font-family:var(--sans);line-height:1.6;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.13;background-image:radial-gradient(rgba(216,195,165,.35) .65px,transparent .65px);background-size:5px 5px}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.wrap{width:min(1160px,calc(100% - 48px));margin:auto}
+header{height:76px;display:flex;align-items:center;position:sticky;top:0;z-index:20;background:rgba(16,19,27,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{font:700 17px var(--mono);letter-spacing:-1px;color:var(--sand)}
+.logo span{color:var(--red)}
+.navlinks{display:flex;gap:26px;align-items:center;font-size:13px;color:var(--muted)}
+.navlinks a:hover,.navlinks a:focus-visible{color:var(--sand)}
+.nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:11px 17px;border:1px solid rgba(216,195,165,.28);border-radius:4px;font-size:13px;font-weight:650;transition:.2s ease}
+.nav-cta,.button.primary{background:var(--red);border-color:var(--red);color:#fff}
+.nav-cta:hover,.button.primary:hover{background:#963244;transform:translateY(-2px)}
+.button.secondary:hover{border-color:var(--sand);color:var(--sand);transform:translateY(-2px)}
+.menu-btn{display:none;background:none;color:var(--white);border:1px solid var(--line);padding:8px 10px}
+.hero{min-height:690px;display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:48px;padding:76px 0 88px;position:relative}
+.kicker,.eyebrow{font:11px var(--mono);letter-spacing:1.5px;color:var(--sage);text-transform:uppercase}
+.kicker:before{content:"";display:inline-block;width:22px;height:1px;background:var(--red);vertical-align:middle;margin-right:10px}
+h1{font-size:clamp(42px,5.4vw,68px);line-height:1.04;letter-spacing:-3.6px;margin:22px 0 22px;font-weight:750;max-width:650px}
+h1 em{font-style:normal;color:var(--sand)}
+.lead{font-size:17px;color:#b9bbc1;max-width:540px;line-height:1.8}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.status{display:inline-flex;align-items:center;gap:9px;margin-top:32px;color:var(--muted);font:11px var(--mono)}
+.status i{width:7px;height:7px;border-radius:50%;background:var(--olive);box-shadow:0 0 12px var(--olive)}
+.scene-shell{position:relative;min-height:430px;display:grid;place-items:center;perspective:900px}
+.scene-label{position:absolute;top:2px;left:5px;font:10px var(--mono);letter-spacing:1px;color:#747b87}
+.scene{width:min(100%,490px);height:365px;position:relative;overflow:hidden;border:1px solid rgba(216,195,165,.22);background:linear-gradient(180deg,#18273b 0%,#172133 62%,#241f25 100%);box-shadow:14px 14px 0 rgba(72,29,42,.32);image-rendering:pixelated;transform-style:preserve-3d;transition:transform .15s ease-out}
+.scene:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.8%,rgba(216,195,165,.035) 50%,transparent 50.2%),linear-gradient(transparent 49.8%,rgba(216,195,165,.035) 50%,transparent 50.2%);background-size:24px 24px;pointer-events:none}
+.stars{position:absolute;inset:0;background-image:radial-gradient(#d8c3a5 1px,transparent 1.5px),radial-gradient(#9aafc5 1px,transparent 1.5px);background-size:67px 59px,103px 87px;background-position:10px 13px,38px 28px;opacity:.5}
+.window{position:absolute;top:34px;left:50%;transform:translateX(-50%);width:185px;height:130px;border:7px solid #725943;background:linear-gradient(#263d5a,#1b2a40);box-shadow:inset 0 0 0 2px #10131b}
+.window:before,.window:after{content:"";position:absolute;background:#725943}
+.window:before{width:5px;height:100%;left:50%;top:0}.window:after{height:5px;width:100%;top:50%;left:0}
+.moon{position:absolute;width:28px;height:28px;background:var(--sand);border-radius:50%;top:20px;right:28px;box-shadow:0 0 22px rgba(216,195,165,.3)}
+.skyline{position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(90deg,#10131b 0 8%,transparent 8% 12%,#10131b 12% 25%,transparent 25% 31%,#10131b 31% 40%,transparent 40% 46%,#10131b 46% 59%,transparent 59% 65%,#10131b 65% 79%,transparent 79% 84%,#10131b 84%)}
+.desk{position:absolute;left:0;right:0;bottom:0;height:98px;background:#533d36;border-top:8px solid #a77e5b}
+.desk:after{content:"";position:absolute;left:15%;right:13%;bottom:-36px;height:36px;background:#382d30}
+.monitor{position:absolute;left:50%;top:153px;transform:translateX(-50%);width:154px;height:112px;background:#10131b;border:7px solid #4d4b51;box-shadow:5px 5px 0 #10131b;z-index:3}
+.monitor:before{content:"";position:absolute;left:50%;bottom:-23px;width:8px;height:20px;background:#77716b}
+.monitor:after{content:"";position:absolute;left:calc(50% - 27px);bottom:-28px;width:62px;height:7px;background:#77716b}
+.screen{padding:10px 9px;font:8px/1.8 var(--mono);color:var(--sage)}
+.screen b{color:#d98a91;font-weight:400}.screen .cursor{display:inline-block;width:5px;height:9px;background:var(--sand);vertical-align:middle;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.keyboard{position:absolute;z-index:4;left:calc(50% - 42px);top:278px;width:85px;height:13px;background:#77716b;transform:skew(-20deg);box-shadow:0 3px 0 #342b2d}
+.plant{position:absolute;z-index:5;bottom:93px;left:45px;width:30px;height:48px}
+.plant:before{content:"";position:absolute;bottom:0;left:5px;width:22px;height:18px;background:#a77e5b;clip-path:polygon(12% 0,88% 0,100% 100%,0 100%)}
+.plant:after{content:"";position:absolute;left:0;top:0;width:30px;height:32px;background:var(--olive);clip-path:polygon(50% 100%,0 45%,20% 20%,45% 48%,55% 0,80% 20%,100% 50%)}
+.lamp{position:absolute;right:52px;bottom:96px;width:7px;height:48px;background:#a77e5b;z-index:4}
+.lamp:before{content:"";position:absolute;top:-5px;left:-12px;width:30px;height:13px;background:var(--sand);clip-path:polygon(20% 0,80% 0,100% 100%,0 100%);filter:drop-shadow(0 0 12px #d8c3a5)}
+.cat{position:absolute;z-index:7;bottom:88px;width:38px;height:26px;background:#24232a;transition:transform .2s}
+.cat:before{content:"";position:absolute;top:-9px;left:4px;width:24px;height:19px;background:inherit;clip-path:polygon(0 0,35% 22%,65% 22%,100% 0,100% 100%,0 100%)}
+.cat:after{content:"";position:absolute;right:-9px;bottom:4px;width:13px;height:5px;border-top:4px solid #24232a;border-radius:50%;transform:rotate(30deg)}
+.cat.one{left:108px}.cat.two{right:105px;transform:scale(.8);background:#8d7866}
+.cat:hover{transform:translateY(-7px)}
+.hotspot{position:absolute;z-index:10;border:1px solid rgba(216,195,165,.55);background:rgba(16,19,27,.9);color:var(--sand);font:9px var(--mono);padding:6px 8px;cursor:pointer;opacity:0;transition:.2s;white-space:nowrap}
+.scene:hover .hotspot,.hotspot:focus-visible,.hotspot.active{opacity:1}
+.hotspot.server{top:190px;left:14px}.hotspot.planttag{bottom:155px;left:20px}.hotspot.cat-tag{bottom:145px;right:18px}
+.scene-hint{position:absolute;bottom:-29px;right:0;color:#777e89;font:10px var(--mono)}
+.section{padding:100px 0;border-top:1px solid var(--line)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}
+.section-head h2{font-size:clamp(30px,4vw,44px);letter-spacing:-1.8px;line-height:1.12;margin:10px 0 0}
+.section-head p{max-width:390px;color:var(--muted);font-size:14px;margin:0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.about-copy p{color:#b9bbc1;line-height:1.9}
+.about-note{border-left:2px solid var(--red);padding:18px 22px;background:rgba(125,38,53,.09);color:var(--sand);font:13px/1.8 var(--mono)}
+.pixel-card{border:1px solid var(--line);background:linear-gradient(145deg,#1a2433,#151a24);padding:27px;position:relative;min-height:220px}
+.pixel-card .big-pixel{font:38px var(--mono);color:var(--olive);letter-spacing:5px}
+.pixel-card p{color:var(--muted);font-size:13px;max-width:330px}
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.service{padding:27px;border:1px solid var(--line);background:rgba(23,29,41,.78);transition:.22s;min-height:260px}
+.service:hover{transform:translateY(-4px);border-color:rgba(216,195,165,.45);background:#1b2432}
+.service-icon{font:22px var(--mono);color:var(--sand);margin-bottom:18px}
+.service h3{font-size:19px;margin:0 0 10px;letter-spacing:-.4px}
+.service p{font-size:13px;color:var(--muted);line-height:1.8}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.tag{font:10px var(--mono);padding:5px 8px;border:1px solid var(--line);color:var(--sage)}
+.stack{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.stack-group{padding:22px;border-top:2px solid var(--navy);background:rgba(23,29,41,.65)}
+.stack-group:nth-child(2){border-color:var(--red)}.stack-group:nth-child(3){border-color:var(--olive)}
+.stack-group h3{font:12px var(--mono);color:var(--sand);margin:0 0 17px;text-transform:uppercase;letter-spacing:1px}
+.stack-group p{font-size:13px;color:var(--muted);line-height:2;margin:0}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.project{border:1px solid var(--line);padding:25px;background:#151b26}
+.project .num{font:11px var(--mono);color:var(--red)}
+.project h3{font-size:19px;margin:12px 0 8px}
+.project p{font-size:13px;color:var(--muted);line-height:1.8}
+.project small{font:10px var(--mono);color:var(--sage)}
+.interests{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.interest{padding:20px 14px;border:1px solid var(--line);background:#171d29;text-align:center}
+.interest .symbol{font:25px var(--mono);color:var(--sand);height:42px}
+.interest h3{font-size:12px;margin:9px 0 3px}.interest p{font-size:11px;color:var(--muted);margin:0}
+.contact{background:linear-gradient(120deg,rgba(72,29,42,.45),rgba(27,42,64,.4));border:1px solid var(--line);padding:48px;display:flex;justify-content:space-between;align-items:center;gap:35px}
+.contact h2{font-size:clamp(28px,4vw,43px);letter-spacing:-1.8px;line-height:1.1;margin:10px 0}
+.contact p{color:#b9bbc1;max-width:510px;font-size:14px}
+.contact-links{display:flex;flex-direction:column;gap:12px;min-width:220px}
+.contact-links a{font:12px var(--mono);color:var(--sand);border-bottom:1px solid var(--line);padding:8px 0}
+footer{padding:30px 0;color:#777e89;font:10px var(--mono)}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+#glow{position:fixed;inset:0;pointer-events:none;z-index:30;background:radial-gradient(360px circle at var(--mx,50%) var(--my,50%),rgba(154,175,197,.07),transparent 70%)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#202b3b;border:1px solid var(--line);padding:10px 15px;color:var(--sand);font:11px var(--mono);transition:.25s;z-index:40}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.game{display:grid;grid-template-columns:300px 1fr;gap:48px;align-items:center;border:1px solid var(--line);background:linear-gradient(145deg,#1a2433,#151a24);padding:36px}
+.game-shot{position:relative;justify-self:center}
+.game-shot img{display:block;width:260px;height:auto;border:4px solid #10131b;box-shadow:10px 10px 0 rgba(72,29,42,.45);image-rendering:pixelated}
+.game-shot .icon{position:absolute;right:-18px;bottom:-18px;width:72px;height:72px;border:3px solid #10131b;border-radius:16px;box-shadow:4px 4px 0 #10131b}
+.game h3{font-size:clamp(26px,3vw,34px);letter-spacing:-1.2px;margin:8px 0 12px}
+.game p{color:#b9bbc1;font-size:14px;line-height:1.8;max-width:560px}
+.game-facts{display:flex;flex-wrap:wrap;gap:18px;margin:18px 0 22px;font:11px var(--mono);color:var(--sage)}
+.game-facts span:before{content:"▪ ";color:var(--red)}
+.game-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.button.soon{border-style:dashed;color:var(--muted);cursor:default}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap}
+.footer-links a:hover{color:var(--sand)}
+@media(max-width:800px){
+ .hero{grid-template-columns:1fr;padding-top:65px;gap:48px}.scene-shell{min-height:390px}
+ .about-grid{grid-template-columns:1fr;gap:25px}.stack{grid-template-columns:1fr 1fr}
+ .interests{grid-template-columns:repeat(3,1fr)}.contact{align-items:flex-start;flex-direction:column}
+ .game{grid-template-columns:1fr;gap:40px;padding:28px}
+ .navlinks{display:none;position:absolute;top:75px;left:0;right:0;padding:20px 24px;background:#121722;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}
+ .navlinks.open{display:flex}.menu-btn{display:block}.nav-cta{display:none}
+}
+@media(max-width:540px){
+ .wrap{width:min(100% - 34px,1160px)}h1{letter-spacing:-2.4px}
+ .section{padding:72px 0}.section-head{display:block}.section-head p{margin-top:18px}
+ .services,.projects,.stack{grid-template-columns:1fr}.interests{grid-template-columns:repeat(2,1fr)}
+ .scene{height:330px}.window{top:26px}.monitor{top:145px}.keyboard{top:270px}
+ .contact{padding:27px}.scene-hint{right:5px}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div id="glow"></div>
+<header>
+ <div class="wrap nav">
+  <a class="logo" href="#home">humar<span>.</span>dev</a>
+  <nav class="navlinks" id="navlinks">
+   <a href="#about">About</a><a href="#services">What I do</a><a href="#stack">Toolbox</a><a href="#work">Selected work</a><a href="#games">Games</a><a href="#interests">Interests</a>
+  </nav>
+  <a class="nav-cta" href="#contact">Let's talk ↗</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-controls="navlinks" aria-expanded="false">☰</button>
+ </div>
+</header>
+<main id="home">
+ <section class="wrap hero">
+  <div>
+   <div class="kicker">Humar Moreno · DevOps / Automation / AI</div>
+   <h1>Building systems that work—and <em>automations</em> that give people time back.</h1>
+   <p class="lead">I’m a DevOps engineer and backend developer focused on cloud platforms, reliability, and practical automation. I turn complex technical problems into systems that are easier to operate and scale.</p>
+   <div class="hero-actions"><a class="button primary" href="#contact">Discuss a project ↗</a><a class="button secondary" href="#services">Explore what I do</a></div>
+   <div class="status"><i></i> OPEN TO INTERESTING PROJECTS <span>·</span> MEDELLÍN, COLOMBIA</div>
+  </div>
+  <div class="scene-shell">
+   <div class="scene-label">[ FIG. 01 — THE WORKSPACE ]</div>
+   <div class="scene" id="scene" aria-label="Interactive pixel-art developer workspace">
+    <div class="stars"></div><div class="moon"></div><div class="window"></div><div class="skyline"></div>
+    <div class="monitor"><div class="screen"><div>&gt; hello_humar()</div><div><b>deploy</b> --reliable</div><div>automation: <b>enabled</b></div><div>systems: operational</div><div>&gt; <span class="cursor"></span></div></div></div>
+    <div class="keyboard"></div><div class="plant"></div><div class="lamp"></div><div class="desk"></div>
+    <div class="cat one" title="Pixel cat"></div><div class="cat two" title="Pixel cat"></div>
+    <button class="hotspot server" data-note="Cloud infrastructure: designed to be repeatable.">[ server rack ]</button>
+    <button class="hotspot planttag" data-note="A little green between deployments.">[ grow slowly ]</button>
+    <button class="hotspot cat-tag" data-note="Two unofficial office supervisors.">[ office crew ]</button>
+   </div>
+   <div class="scene-hint">MOVE YOUR CURSOR AROUND THE ROOM ↗</div>
+  </div>
+ </section>
+
+ <section class="section" id="about"><div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">01 / A LITTLE ABOUT ME</div><h2>Engineer by profession.<br><em style="color:var(--sand)">Curious by default.</em></h2></div><p>I like understanding how things work end to end—and making them work better.</p></div>
+  <div class="about-grid">
+   <div class="about-copy"><p>I work across backend engineering, DevOps, cloud infrastructure, and automation. From application behavior and data to infrastructure, observability, deployment pipelines, and the people operating them, I enjoy connecting the dots.</p><p>Outside work, I explore technology, experiment with AI tools, discover music, travel, and get outdoors. I’m also interested in diving, smart-home projects, and building small ideas that might grow into useful products.</p></div>
+   <div class="pixel-card"><div class="big-pixel">0101<br>▦ ▣ ▦</div><p>Always learning. Usually building something. Occasionally debugging something that was working five minutes ago.</p><div class="tags"><span class="tag">BACKEND</span><span class="tag">CLOUD</span><span class="tag">AI</span><span class="tag">CURIOSITY</span></div></div>
+  </div>
+ </div></section>
+
+ <section class="section" id="services"><div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">02 / WHAT I DO</div><h2>From messy workflows<br>to systems that flow.</h2></div><p>Practical engineering for teams that want less friction, more visibility, and room to grow.</p></div>
+  <div class="services">
+   <article class="service"><div class="service-icon">[ AI ]</div><h3>AI-powered workflow automation</h3><p>Connect tools, automate repetitive work, and introduce AI where it creates real value—with sensible human review and control.</p><div class="tags"><span class="tag">AI AGENTS</span><span class="tag">API INTEGRATIONS</span><span class="tag">WORKFLOWS</span></div></article>
+   <article class="service"><div class="service-icon">[ ☁ ]</div><h3>DevOps & cloud infrastructure</h3><p>Build repeatable cloud foundations, reliable Kubernetes platforms, and delivery workflows that teams can operate confidently.</p><div class="tags"><span class="tag">AWS</span><span class="tag">KUBERNETES</span><span class="tag">TERRAFORM</span><span class="tag">GITOPS</span></div></article>
+   <article class="service"><div class="service-icon">[ ◉ ]</div><h3>Observability & reliability</h3><p>Make production systems easier to understand through useful telemetry, actionable alerts, and better incident practices.</p><div class="tags"><span class="tag">GRAFANA</span><span class="tag">PROMETHEUS</span><span class="tag">LOKI</span><span class="tag">SRE</span></div></article>
+   <article class="service"><div class="service-icon">[ &lt;/&gt; ]</div><h3>Backend engineering & integrations</h3><p>Design APIs, connect services, improve application performance, and build internal tools around real operational needs.</p><div class="tags"><span class="tag">BACKEND</span><span class="tag">APIs</span><span class="tag">DATABASES</span><span class="tag">INTEGRATIONS</span></div></article>
+  </div>
+ </div></section>
+
+ <section class="section" id="stack"><div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">03 / THE TOOLBOX</div><h2>Tools are only useful<br>when they solve something.</h2></div><p>A selection of technologies and practices I work with across infrastructure, operations, and software delivery.</p></div>
+  <div class="stack">
+   <div class="stack-group"><h3>Cloud & infrastructure</h3><p>AWS<br>Kubernetes / EKS<br>Terraform<br>Helm<br>Argo CD<br>Cloudflare</p></div>
+   <div class="stack-group"><h3>Observability & operations</h3><p>Grafana<br>Prometheus<br>Loki<br>CloudWatch<br>Incident management<br>On-call practices</p></div>
+   <div class="stack-group"><h3>Engineering & delivery</h3><p>Backend development<br>APIs & integrations<br>CI/CD<br>GitOps<br>Platform engineering<br>Automation</p></div>
+  </div>
+ </div></section>
+
+ <section class="section" id="work"><div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">04 / SELECTED WORK</div><h2>Interesting problems.<br>Thoughtful engineering.</h2></div><p>A few areas of work I enjoy. Detailed public case studies can be added as projects are cleared for publication.</p></div>
+  <div class="projects">
+   <article class="project"><div class="num">CASE STUDY / 001</div><h3>Platform modernization</h3><p>Moving application workloads from legacy compute into Kubernetes, improving deployment consistency and operational management.</p><small>KUBERNETES · AWS · GITOPS</small></article>
+   <article class="project"><div class="num">CASE STUDY / 002</div><h3>Observability pipeline</h3><p>Centralizing logs and metrics to help engineering teams investigate production behavior and respond to issues with better context.</p><small>GRAFANA · LOKI · PROMETHEUS</small></article>
+   <article class="project"><div class="num">CASE STUDY / 003</div><h3>Infrastructure optimization</h3><p>Reviewing migrated infrastructure, validating dependencies, and identifying legacy resources that can be safely retired.</p><small>AWS · COST OPTIMIZATION</small></article>
+   <article class="project"><div class="num">CASE STUDY / 004</div><h3>Operational automation</h3><p>Replacing repetitive manual tasks with dependable workflows that reduce intervention and make operations more predictable.</p><small>AUTOMATION · INTEGRATIONS</small></article>
+  </div>
+ </div></section>
+
+ <section class="section" id="games"><div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">05 / NOW BUILDING</div><h2>A side project<br><em style="color:var(--sand)">you can play.</em></h2></div><p>Pixel art, chunky towers and short sessions — built end to end, from game logic to the Android release pipeline.</p></div>
+  <article class="game">
+   <div class="game-shot"><img src="/pixel-tower-defense/screenshot-battle.png" width="1080" height="2160" alt="Pixel Tower Defense battle: towers defend a winding path, a castle with 14 lives guards the exit" loading="lazy"><img class="icon" src="/pixel-tower-defense/icon-512.png" width="512" height="512" alt="" loading="lazy"></div>
+   <div>
+    <div class="eyebrow">ANDROID GAME</div>
+    <h3>Pixel Tower Defense</h3>
+    <p>Build towers, stop the waves and keep your castle standing. Five towers, three worlds, boss fights, random challenges that earn powers, Hard mode, a daily Endless map and skins for your towers, maps and base.</p>
+    <div class="game-facts"><span>ANDROID</span><span>FREE · OPTIONAL PURCHASES</span><span>CONTAINS ADS</span><span>AGES 13+</span></div>
+    <div class="tags"><span class="tag">TYPESCRIPT</span><span class="tag">PHASER</span><span class="tag">CAPACITOR</span><span class="tag">ADMOB</span><span class="tag">PLAY BILLING</span></div>
+    <div class="game-actions">
+     <span class="button soon" aria-disabled="true">Google Play · coming soon</span>
+     <a class="button secondary" href="/pixel-tower-defense/privacy/">Privacy policy</a>
+     <a class="button secondary" href="mailto:support@humar.dev?subject=Pixel%20Tower%20Defense">Support ↗</a>
+    </div>
+   </div>
+  </article>
+ </div></section>
+
+ <section class="section" id="interests"><div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">06 / OFF THE CLOCK</div><h2>Life beyond the terminal.</h2></div><p>There’s plenty to explore when the deployments are done.</p></div>
+  <div class="interests">
+   <div class="interest"><div class="symbol">♫</div><h3>Music</h3><p>Reggae to metal</p></div>
+   <div class="interest"><div class="symbol">⌁</div><h3>Travel</h3><p>New places & cultures</p></div>
+   <div class="interest"><div class="symbol">≈</div><h3>Diving</h3><p>Underwater worlds</p></div>
+   <div class="interest"><div class="symbol">⌂</div><h3>Smart home</h3><p>Useful little systems</p></div>
+   <div class="interest"><div class="symbol">✳</div><h3>Side projects</h3><p>Ideas into prototypes</p></div>
+  </div>
+ </div></section>
+
+ <section class="section" id="contact"><div class="wrap">
+  <div class="contact">
+   <div><div class="eyebrow">07 / CONTACT</div><h2>Have a workflow<br>worth improving?</h2><p>Tell me what is slowing your team down, what you would like to automate, or what infrastructure challenge you are working through.</p><a class="button primary" href="mailto:me@humar.dev?subject=Let's%20build%20something">Start a conversation ↗</a></div>
+   <div class="contact-links"><a href="mailto:me@humar.dev">me@humar.dev ↗</a><a href="https://www.linkedin.com/in/humar-moreno-715759101/" target="_blank" rel="noreferrer">LINKEDIN ↗</a><a href="https://www.instagram.com/huenmobra/" target="_blank" rel="noreferrer">INSTAGRAM · @huenmobra ↗</a></div>
+  </div>
+ </div></section>
+</main>
+<footer><div class="wrap footer-inner"><span>© <span id="year"></span> HUMAR MORENO · HUMAR.DEV</span><span>BUILT WITH CURIOSITY & A LITTLE AUTOMATION.</span><span class="footer-links"><a href="/pixel-tower-defense/privacy/">PIXEL TOWER DEFENSE · PRIVACY</a><a href="mailto:support@humar.dev">SUPPORT</a><a href="#home">BACK TO TOP ↑</a></span></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const root=document.documentElement, scene=document.getElementById('scene');
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduced && window.matchMedia('(pointer:fine)').matches){
+ document.addEventListener('pointermove',e=>{
+  root.style.setProperty('--mx',e.clientX+'px');root.style.setProperty('--my',e.clientY+'px');
+  const r=scene.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+  if(e.clientX>=r.left-80&&e.clientX<=r.right+80&&e.clientY>=r.top-80&&e.clientY<=r.bottom+80){
+   scene.style.transform=`rotateY(${x*5}deg) rotateX(${-y*4}deg)`;
+   scene.style.setProperty('--look',x);
+  }else scene.style.transform='rotateY(0) rotateX(0)';
+ });
+}
+const toast=document.getElementById('toast');let toastTimer;
+document.querySelectorAll('.hotspot').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('.hotspot').forEach(b=>b.classList.remove('active'));
+ btn.classList.add('active');toast.textContent=btn.dataset.note;toast.classList.add('show');
+ clearTimeout(toastTimer);toastTimer=setTimeout(()=>{toast.classList.remove('show');btn.classList.remove('active')},2400);
+}));
+const menu=document.getElementById('navlinks'),menuBtn=document.getElementById('menuBtn');
+menuBtn.addEventListener('click',()=>{const open=menu.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}));
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
