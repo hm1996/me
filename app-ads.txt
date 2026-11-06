@@ -1,3 +1,3 @@
 # Upload to https://humar.dev/app-ads.txt (site root). Replace pub-XXXXXXXXXXXXXXXX with your AdMob publisher ID
 # (AdMob > Settings > Account information > Publisher ID, shown as ca-app-pub-...; use only the pub-... part).
-google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+google.com, pub-4691039392368180, DIRECT, f08c47fec0942fa0
